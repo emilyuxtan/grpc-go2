@@ -1,0 +1,11 @@
+version: v1beta1 
+plugins: 
+  - name: buf.build/buf.gen.go.v1beta1 
+    out: .
+    opt: 
+      - with_gogo 
+  - name: buf.build/buf.gen.grpc.go.v1beta1
+    out: .
+    opt: 
+      - require_unimplemented_servers=false 
+
