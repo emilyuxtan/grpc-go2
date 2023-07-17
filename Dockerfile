@@ -4,16 +4,24 @@ FROM golang:1.17-alpine AS builder
 WORKDIR /app
 
 # copy files to download dependencies
-COPY ./go.mod ./go.sum ./
+COPY go.mod go.sum ./
 
 # download dependencies
 RUN go mod download 
 
 # explicitly download missing package
-RUN go mod download google.golang.org/grpc
+# RUN go mod download google.golang.org/grpc
+# RUN go mod tidy
+
+# RUN go get google.golang.org/grpc@v1.43.0
+# RUN go get google.golang.org/protobuf/runtime/protoimpl@v1.31.0
+# RUN go get google.golang.org/grpc/protobuf/reflect/protoreflect
+# @v1.31.0
+
+# RUN go mod tidy
 
 # copy project
-COPY ./helloworld ./helloworld
+COPY helloworld ./helloworld
 # COPY . .
 
 WORKDIR /app/helloworld

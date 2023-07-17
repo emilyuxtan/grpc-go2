@@ -4,7 +4,7 @@
 // - protoc             v3.21.6
 // source: helloworld-server.proto
 
-package helloworld
+package gen_server
 
 import (
 	context "context"

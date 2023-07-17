@@ -4,7 +4,7 @@
 // - protoc             v3.21.6
 // source: helloworld-client.proto
 
-package helloworld
+package gen_client
 
 import (
 	context "context"

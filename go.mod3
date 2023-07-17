@@ -1,0 +1,26 @@
+module github.com/emilyuxtan/grpc-go2
+
+go 1.17
+
+require (
+	github.com/cncf/xds/go v0.0.0-20230607035331-e9ce68804cb4
+	github.com/golang/mock v1.6.0 // indirect
+	github.com/golang/protobuf v1.5.3
+	golang.org/x/oauth2 v0.7.0
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20230711160842-782d3b101e98
+	google.golang.org/grpc v1.54.0
+	google.golang.org/grpc/examples v0.0.0-20230714201633-919fe359160c
+	google.golang.org/protobuf v1.30.0
+)
+
+
+// require (
+// 	github.com/cncf/xds/go v0.0.0-20230607035331-e9ce68804cb4
+// 	github.com/golang/protobuf v1.5.0
+// 	github.com/google/go-cmp v0.5.5
+// 	golang.org/x/oauth2 v0.10.0
+// 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230711160842-782d3b101e98
+// 	google.golang.org/grpc v1.56.2
+// 	google.golang.org/grpc/examples v0.0.0-20230717202921-02946a3f37b6
+// 	google.golang.org/protobuf v1.31.0
+// )
