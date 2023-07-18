@@ -57,9 +57,21 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 	
-	r, err := c.SayHello(ctx, &pb.HelloRequest{Name: *name})
+	r1, err := c.SayHello(ctx, &pb.HelloRequest{Name: *name})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
-	log.Printf("Greeting: %s", r.GetMessage())
+	log.Printf("SayHello Greeting: %s", r1.GetMessage())
+	
+	r2, err := c.SayHelloAgain(ctx, &pb.HelloAgainRequest{Name: *name})
+	if err != nil {
+		log.Fatalf("could not greet: %v", err)
+	}
+	log.Printf("SayHelloAgain Greeting: %s", r2.GetMessage())
+
+	r3, err := c.AnotherSayHello(ctx, &pb.AnotherHelloRequest{Name: *name})
+	if err != nil {
+		log.Fatalf("could not greet: %v", err)
+	}
+	log.Printf("AnotherSayHello Greeting: %s", r3.GetMessage())
 }
