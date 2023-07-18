@@ -22,6 +22,6 @@ message HelloRequest {
 // The response message containing the greetings
 message HelloReply {
   // string othermessage1 = 1;
-  string message = 2;
+  string message = 1;
   // string othermessage2 = 3;
 }

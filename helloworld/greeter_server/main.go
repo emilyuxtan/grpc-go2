@@ -27,8 +27,10 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
-	//pb "google.golang.org/grpc/examples/helloworld/helloworld"
-	pb "github.com/emilyuxtan/grpc-go2/helloworld/helloworld/gen-server"
+	// pb "google.golang.org/grpc/examples/helloworld/helloworld"
+	pb "github.com/emilyuxtan/grpc-go2/helloworld/helloworld/gen-client"
+	//pbc "github.com/emilyuxtan/grpc-go2/helloworld/helloworld/gen-client"
+	//pbs "github.com/emilyuxtan/grpc-go2/helloworld/helloworld/gen-server"
 )
 
 var (
@@ -44,10 +46,6 @@ type server struct {
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
 	log.Printf("Received: %v", in.GetName())
 	return &pb.HelloReply{Message: "Hello " + in.GetName()}, nil
-}
-
-func (s *server) SayHelloAgain(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	return &pb.HelloReply{Message: "Hello again " + in.GetName()}, nil
 }
 
 func main() {

@@ -29,6 +29,8 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	// pb "google.golang.org/grpc/examples/helloworld/helloworld"
 	pb "github.com/emilyuxtan/grpc-go2/helloworld/helloworld/gen-client"
+	// pbc "github.com/emilyuxtan/grpc-go2/helloworld/helloworld/gen-client"
+	// pbs "github.com/emilyuxtan/grpc-go2/helloworld/helloworld/gen-server"
 )
 
 const (
@@ -54,7 +56,7 @@ func main() {
 	// Contact the server and print out its response.
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-
+	
 	r, err := c.SayHello(ctx, &pb.HelloRequest{Name: *name})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
